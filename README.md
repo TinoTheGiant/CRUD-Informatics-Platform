@@ -1,6 +1,8 @@
 # Sports Informatics CRUD App (CrossFit Edition)
 
 This is a Node.js/Express application for managing CrossFit affiliates, athletes, workouts, and scores, using PostgreSQL and Prisma.
+<img width="1162" height="576" alt="image" src="https://github.com/user-attachments/assets/6fe23bae-8e44-4432-bb68-6f796402a8eb" />
+
 
 ## Prerequisites
 
