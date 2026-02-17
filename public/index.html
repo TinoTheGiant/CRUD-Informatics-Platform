@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feature - Turn data into decisions</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Config for Tailwind -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              background: "#000000",
+              primary: "#F5E4BC", // The exact beige/yellow from the button/text
+              text: "#FFFFFF",
+              gray: {
+                400: "#9CA3AF",
+                800: "#1F2937",
+                900: "#111827",
+              },
+            },
+            backgroundImage: {
+              "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #000000;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      /* Custom highlight box for "decisions" */
+      .highlight-box {
+        background-color: rgba(30, 30, 30, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 0 16px;
+        display: inline-block;
+        color: #f5e4bc; /* Match the primary color */
+      }
+
+      /* Subtle gradient glow at the bottom */
+      .bottom-glow {
+        position: absolute;
+        bottom: -50%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle,
+          rgba(147, 51, 234, 0.3) 0%,
+          rgba(0, 0, 0, 0) 60%
+        );
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      /* Button hover effect */
+      .btn-primary {
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(245, 228, 188, 0.3);
+      }
+    </style>
+  </head>
+  <body class="antialiased min-h-screen flex flex-col relative">
+    <!-- Navigation -->
+    <nav
+      class="flex items-center justify-between px-6 py-6 md:px-12 max-w-7xl mx-auto w-full z-10"
+    >
+      <div class="text-sm font-semibold tracking-widest uppercase">FEATURE</div>
+
+      <button
+        class="flex items-center gap-2 bg-white text-black px-5 py-2 rounded-full font-medium text-sm hover:bg-gray-100 transition-colors"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        menu
+      </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main
+      class="flex-grow flex flex-col items-center justify-center text-center px-4 relative z-0 mt-10 md:mt-20"
+    >
+      <!-- Hero Text -->
+      <h1
+        class="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight leading-tight mb-8"
+      >
+        Turn data<br />
+        into <span class="highlight-box relative">decisions</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-12 font-light">
+        Powerful analytics and reporting that empowers your<br
+          class="hidden md:block"
+        />
+        team to make smarter business choices.
+      </p>
+
+      <!-- CTA Button -->
+      <a
+        href="/dashboard"
+        class="btn-primary bg-primary text-black font-medium text-lg px-8 py-4 rounded-full flex items-center gap-3"
+      >
+        Start 14-day trial
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-5 h-5"
+        >
+          <path d="M5 12h14"></path>
+          <path d="M12 5l7 7-7 7"></path>
+        </svg>
+      </a>
+
+      <!-- Bottom Gradient Glow -->
+      <div class="bottom-glow"></div>
+
+      <!-- Bottom Abstract Shape (simulating the curve in the image) -->
+      <div
+        class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-4xl h-64 bg-gradient-to-t from-purple-900/40 to-transparent blur-3xl opacity-60 rounded-t-full pointer-events-none"
+      ></div>
+    </main>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>
